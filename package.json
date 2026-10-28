@@ -1,0 +1,53 @@
+{
+  "name": "docx2md",
+  "version": "0.1.0",
+  "description": "Mirror .docx files as deterministic Markdown so their changes can be diffed in git.",
+  "private": true,
+  "type": "module",
+  "packageManager": "bun@1.4.4",
+  "engines": {
+    "bun": ">=1.4.0",
+    "node": "24.19.0"
+  },
+  "bin": {
+    "docx2md": "src/cli.ts"
+  },
+  "scripts": {
+    "test": "bun test",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "knip": "knip",
+    "check": "bun run format:check && bun run lint && bun run typecheck && bun run knip && bun test",
+    "prepare": "husky || true"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,yml,yaml}": [
+      "prettier --write"
+    ]
+  },
+  "dependencies": {
+    "mammoth": "1.13.0",
+    "turndown": "7.2.4"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/bun": "^1.4.4",
+    "@types/turndown": "^5.0.6",
+    "eslint": "^10.13.0",
+    "eslint-config-prettier": "^10.1.8",
+    "fflate": "^0.8.3",
+    "husky": "^9.1.7",
+    "knip": "^6.43.0",
+    "lint-staged": "^17.6.0",
+    "prettier": "^3.9.10",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.72.1"
+  }
+}

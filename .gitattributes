@@ -1,0 +1,3 @@
+# Prettier enforces LF (endOfLine: lf, its default); autocrlf checkouts on Windows
+# would flip working trees to CRLF and fail the format gate. Force LF everywhere.
+* text=auto eol=lf

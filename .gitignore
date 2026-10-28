@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+
+# Test / coverage
+coverage/
+
+# Editor & OS
+.DS_Store
+*.log
+.idea/
+.vscode/*
+!.vscode/extensions.json
